@@ -1,0 +1,201 @@
+/* --- VARIABLES & SETUP --- */
+:root {
+    --bg-gradient: radial-gradient(circle at 50% 10%, #e0f7fa, #ffffff, #f0f4f8);
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    --text-primary: #1d1d1f; /* Apple Charcoal */
+    --text-secondary: #86868b; /* Apple Gray */
+    --accent-color: #007aff; /* System Blue standard, configurable */
+    --radius-large: 24px;
+    --radius-medium: 16px;
+    --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font-stack);
+    background: var(--bg-gradient);
+    background-attachment: fixed; /* Mantiene el gradiente fijo al hacer scroll */
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-top: 80px; /* Espacio para el header fijo */
+}
+
+/* --- LIQUID GLASS BACKGROUND ORBS (Decoración Sutil) --- */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(80px);
+    opacity: 0.6;
+}
+body::before {
+    background: #d4fc79; /* Verde suave Snake */
+    top: -100px;
+    left: -100px;
+}
+body::after {
+    background: #96e6a1; /* Verde Teal */
+    bottom: -100px;
+    right: -100px;
+}
+
+/* --- COMPONENTS --- */
+
+/* Navegación Glass */
+.nav-header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1000px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px; /* Forma de píldora estilo iOS */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Glass Cards */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    padding: 40px;
+    box-shadow: var(--glass-shadow);
+    margin-bottom: 30px;
+}
+
+/* Tipografía */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: var(--text-primary);
+}
+
+p, li {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Placeholders de diseño */
+.placeholder-box {
+    width: 100%;
+    height: 300px;
+    background: rgba(200, 200, 200, 0.2);
+    border-radius: var(--radius-medium);
+    border: 2px dashed rgba(200, 200, 200, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+/* Feature Grid */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-header {
+        width: 95%;
+        top: 15px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .glass-card {
+        padding: 25px;
+    }
+}
