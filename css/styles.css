@@ -1,201 +1,230 @@
-/* --- VARIABLES & SETUP --- */
+/* css/styles.css */
+
 :root {
-    --bg-gradient: radial-gradient(circle at 50% 10%, #e0f7fa, #ffffff, #f0f4f8);
-    --glass-bg: rgba(255, 255, 255, 0.65);
-    --glass-border: rgba(255, 255, 255, 0.8);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-    --text-primary: #1d1d1f; /* Apple Charcoal */
-    --text-secondary: #86868b; /* Apple Gray */
-    --accent-color: #007aff; /* System Blue standard, configurable */
-    --radius-large: 24px;
-    --radius-medium: 16px;
-    --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --bg-color: #000000;
+    --text-main: #f5f5f7;
+    --text-secondary: #86868b;
+    --accent-color: #2997ff; /* Azul Apple */
+    --glass-bg: rgba(30, 30, 30, 0.70);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --hover-glass: rgba(45, 45, 45, 0.8);
+    --section-spacing: 100px;
+    --radius-l: 24px;
+    --radius-m: 16px;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
 }
 
 body {
-    font-family: var(--font-stack);
-    background: var(--bg-gradient);
-    background-attachment: fixed; /* Mantiene el gradiente fijo al hacer scroll */
-    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     line-height: 1.6;
-    min-height: 100vh;
-    padding-top: 80px; /* Espacio para el header fijo */
+    overflow-x: hidden;
 }
 
-/* --- LIQUID GLASS BACKGROUND ORBS (Decoración Sutil) --- */
-body::before, body::after {
+/* Efecto de Fondo Difuso (Aurora) */
+body::before {
     content: '';
     position: fixed;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(41, 151, 255, 0.15), transparent 60%),
+                radial-gradient(circle at 80% 20%, rgba(100, 255, 100, 0.1), transparent 50%);
     z-index: -1;
-    filter: blur(80px);
-    opacity: 0.6;
-}
-body::before {
-    background: #d4fc79; /* Verde suave Snake */
-    top: -100px;
-    left: -100px;
-}
-body::after {
-    background: #96e6a1; /* Verde Teal */
-    bottom: -100px;
-    right: -100px;
+    pointer-events: none;
 }
 
-/* --- COMPONENTS --- */
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+}
 
-/* Navegación Glass */
-.nav-header {
+/* Navbar Estilo Cristal */
+.navbar {
     position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1000px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 100px; /* Forma de píldora estilo iOS */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
     z-index: 1000;
 }
 
-.nav-links {
+.nav-container {
+    max-width: 980px;
+    margin: 0 auto;
     display: flex;
-    gap: 30px;
-    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-left: 24px;
 }
 
 .nav-links a:hover {
-    color: var(--accent-color);
+    color: var(--text-main);
 }
 
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 40px; /* Offset for fixed nav */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    background: var(--text-main);
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Contenedor Principal */
 .container {
-    max-width: 900px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: var(--section-spacing) 20px;
 }
 
-/* Glass Cards */
+/* Grid de Características (Bento Box Style) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
-    border-radius: var(--radius-large);
+    border-radius: var(--radius-l);
     padding: 40px;
-    box-shadow: var(--glass-shadow);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.glass-card:hover {
+    background: var(--hover-glass);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.glass-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.glass-card p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+/* Sección de Descripción Larga */
+.game-info {
+    text-align: center;
+    margin: var(--section-spacing) auto;
+    max-width: 800px;
+}
+
+.game-info h2 {
+    font-size: 2.5rem;
     margin-bottom: 30px;
 }
 
-/* Tipografía */
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: -0.02em;
-}
-
-h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    letter-spacing: -0.01em;
-}
-
-h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-top: 20px;
-    color: var(--text-primary);
-}
-
-p, li {
-    font-size: 1.05rem;
+.game-info p {
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 15px;
-}
-
-ul {
-    padding-left: 20px;
     margin-bottom: 20px;
-}
-
-/* Placeholders de diseño */
-.placeholder-box {
-    width: 100%;
-    height: 300px;
-    background: rgba(200, 200, 200, 0.2);
-    border-radius: var(--radius-medium);
-    border: 2px dashed rgba(200, 200, 200, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-    margin: 20px 0;
-    font-weight: 500;
-}
-
-/* Feature Grid */
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    text-align: left;
 }
 
 /* Footer */
 footer {
+    background: #000;
+    padding: 60px 0;
     text-align: center;
-    padding: 40px 0;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
+    border-top: 1px solid var(--glass-border);
+    margin-top: auto;
 }
 
-footer a {
+footer p {
     color: var(--text-secondary);
-    text-decoration: none;
-    margin: 0 10px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .nav-header {
-        width: 95%;
-        top: 15px;
-    }
-    
-    h1 {
-        font-size: 2.2rem;
-    }
-    
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; }
+    .features-grid { grid-template-columns: 1fr; }
+}
 
-    .glass-card {
-        padding: 25px;
-    }
+/* Clases de Utilidad para Texto */
+.text-gradient {
+    background: linear-gradient(90deg, #ffcc00, #ff5e00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
