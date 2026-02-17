@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación Técnica | Snake Islands</title>
+    <meta name="description" content="Technical Case Study: Arquitectura, stack tecnológico y estructura de proyecto de Snake Islands.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Estilos específicos para documentación técnica */
+        :root {
+            --code-bg: #1e1e1e;
+            --code-border: #333;
+            --accent-green: #10b981;
+            --accent-purple: #8b5cf6;
+        }
+
+        .tech-hero {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .tech-badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tech-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .tech-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tech-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Dependencias */
+        .deps-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .dep-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            background: rgba(41, 151, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        /* Bloque de Código */
+        .code-window {
+            background: var(--code-bg);
+            border: 1px solid var(--code-border);
+            border-radius: 12px;
+            overflow: hidden;
+            font-family: 'JetBrains Mono', monospace;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .code-header {
+            background: #2d2d2d;
+            padding: 10px 15px;
+            display: flex;
+            gap: 6px;
+            border-bottom: 1px solid var(--code-border);
+        }
+
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+
+        .code-content {
+            padding: 20px;
+            overflow-x: auto;
+            color: #d4d4d4;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .tree-line { display: block; }
+        .tree-comment { color: #6a9955; margin-left: 15px; font-style: italic; }
+        .tree-folder { color: var(--accent-blue); font-weight: bold; }
+        .tree-file { color: var(--text-primary); }
+
+        /* Screenshots Técnicos */
+        .tech-screens {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .screen-placeholder {
+            aspect-ratio: 16/9;
+            background: #111;
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Bullet Points Técnicos */
+        .tech-list {
+            list-style: none;
+        }
+        .tech-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+        .tech-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+        }
+        
+        @media (max-width: 768px) {
+            .tech-hero { padding-top: 100px; }
+            .tech-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Snake Islands <span style="font-weight:300; opacity:0.6;">| Docs</span></a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Volver al Inicio</a>
+                <a href="#architecture" class="nav-link">Arquitectura</a>
+                <a href="https://github.com/llCaballeroll" target="_blank" class="nav-cta">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="tech-hero container fade-in-up">
+        <h1>Arquitectura Técnica</h1>
+        <p class="hero-subtitle">Engineering Case Study: Desarrollo de motor 2D multiplataforma.</p>
+        
+        <div class="tech-badge-container">
+            <span class="tech-badge">Flutter 3.28+</span>
+            <span class="tech-badge">Flame Engine</span>
+            <span class="tech-badge">Dart</span>
+            <span class="tech-badge">Mobile First</span>
+        </div>
+    </header>
+
+    <section class="section-dark">
+        <div class="container fade-in-up delay-1">
+            <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                <h2>Stack Tecnológico</h2>
+                <p>Selección de herramientas para rendimiento nativo y escalabilidad.</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>⚡ Core Framework</h3>
+                    <p><strong>Flutter 3.28.9</strong> para renderizado UI de alto rendimiento y compilación nativa en ARM64.</p>
+                </div>
+                <div class="tech-card">
+                    <h3>🎮 Game Engine</h3>
+                    <p><strong>Flame Engine</strong>. Implementación de Game Loop, ECS (Entity Component System) y física 2D.</p>
+                </div>
+                <div class="tech-card">
+                    <h3>💰 Monetización</h3>
+                    <p>Integración híbrida: <strong>Google Mobile Ads</strong> (Interstitial/Reward) + <strong>In-App Purchases</strong>.</p>
+                </div>
+                <div class="tech-card">
+                    <h3>🌐 Multiplataforma</h3>
+                    <p>Código base único desplegado en <strong>Android, iOS, macOS y Windows</strong> con adaptación de inputs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container fade-in-up">
+            <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                <h2>Dependencias Clave</h2>
+                <p>Librerías esenciales utilizadas en <code>pubspec.yaml</code>.</p>
+            </div>
+
+            <div class="deps-list">
+                <div class="dep-item">flame</div>
+                <div class="dep-item">flame_audio</div>
+                <div class="dep-item">google_mobile_ads</div>
+                <div class="dep-item">in_app_purchase</div>
+                <div class="dep-item">shared_preferences</div>
+                <div class="dep-item">flutter_native_splash</div>
+                <div class="dep-item">games_services</div>
+                <div class="dep-item">flutter_localization</div>
+                <div class="dep-item">package_info_plus</div>
+                <div class="dep-item">url_launcher</div>
+                <div class="dep-item">animate_do</div>
+                <div class="dep-item">intl</div>
+                <div class="dep-item">liquid_glass_renderer</div>
+                <div class="dep-item">flutter_displaymode</div>
+                <div class="dep-item">cupertino_icons</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="section-dark">
+        <div class="container fade-in-up">
+            <div class="section-header" style="text-align: left; margin-bottom: 1rem;">
+                <h2>Arquitectura del Proyecto</h2>
+                <p>Estructura modular separando la lógica del juego (Flame) de la interfaz de usuario (Flutter Widgets).</p>
+            </div>
+
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="code-content">
+<span class="tree-line"><span class="tree-folder">lib/</span></span>
+<span class="tree-line">├── <span class="tree-file">main.dart</span> <span class="tree-comment">// Punto de entrada e inyección de dependencias</span></span>
+<span class="tree-line">├── <span class="tree-folder">game/</span> <span class="tree-comment">// Núcleo del Game Loop (Flame)</span></span>
+<span class="tree-line">│   ├── <span class="tree-folder">components/</span> <span class="tree-comment">// Entidades: Player, Enemies, Items, Backgrounds</span></span>
+<span class="tree-line">│   └── <span class="tree-folder">managers/</span> <span class="tree-comment">// Lógica: GameManager, SpawnManager, ScoreManager</span></span>
+<span class="tree-line">├── <span class="tree-folder">screens/</span> <span class="tree-comment">// UI Layer (Widgets): Menu, Settings, GameOver</span></span>
+<span class="tree-line">├── <span class="tree-folder">services/</span> <span class="tree-comment">// Servicios externos: Storage, Audio, Ads, IAP</span></span>
+<span class="tree-line">└── <span class="tree-folder">l10n/</span> <span class="tree-comment">// Archivos de internacionalización (ARB)</span></span>
+                </div>
+            </div>
+
+            <div class="tech-grid">
+                <div>
+                    <h3>Patrones de Diseño</h3>
+                    <ul class="tech-list">
+                        <li><strong>Component-Based:</strong> Uso extensivo de componentes de Flame para composición de entidades.</li>
+                        <li><strong>Service Locator:</strong> <code>GetIt</code> (implícito) o Singletons para gestión de audio y preferencias.</li>
+                        <li><strong>State Management:</strong> Gestión de estado reactivo para UI híbrida (Game widget + Flutter overlays).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Optimización</h3>
+                    <ul class="tech-list">
+                        <li><strong>Object Pooling:</strong> Reutilización de enemigos y proyectiles para evitar Garbage Collection spikes.</li>
+                        <li><strong>Sprite Batching:</strong> Renderizado eficiente de elementos repetitivos.</li>
+                        <li><strong>Display Mode:</strong> Soporte para pantallas de alta tasa de refresco (90Hz/120Hz).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container fade-in-up">
+            <div class="section-header" style="text-align: left;">
+                <h2>Ficha Técnica</h2>
+            </div>
+            
+            <div class="tech-grid">
+                <div>
+                    <ul class="tech-list" style="font-size: 1.1rem;">
+                        <li>Motor de física 2D personalizado sobre Flame.</li>
+                        <li>Sistema de Audio Engine posicional.</li>
+                        <li>Persistencia de datos local encriptada.</li>
+                        <li>Soporte de localización dinámica (i18n).</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="tech-list" style="font-size: 1.1rem;">
+                        <li>Integración de Leaderboards nativos (Game Center / Play Games).</li>
+                        <li>Pipeline de assets optimizado (.webp / .ogg).</li>
+                        <li>Control de versiones con Git + GitHub Actions (CI/CD).</li>
+                        <li>Arquitectura Scalable Folder Structure.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container fade-in-up">
+            <h2>Visualización Técnica</h2>
+            <div class="tech-screens">
+                <div class="screen-placeholder">
+                    <img src="assets/img/tech/debug_view.webp" alt="Placeholder: Vista de depuración de hitboxes" style="width:100%; height:100%; object-fit:cover; opacity:0.5;">
+                </div>
+                <div class="screen-placeholder">
+                    <img src="assets/img/tech/architecture_diagram.webp" alt="Placeholder: Diagrama de flujo de datos" style="width:100%; height:100%; object-fit:cover; opacity:0.5;">
+                </div>
+                <div class="screen-placeholder">
+                    <img src="assets/img/tech/performance_profiler.webp" alt="Placeholder: Flutter DevTools Profiler" style="width:100%; height:100%; object-fit:cover; opacity:0.5;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light" style="text-align: center;">
+        <div class="container fade-in-up">
+            <h2>¿Interesado en el código?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Este proyecto demuestra capacidades en ingeniería de software, arquitectura limpia y desarrollo full-stack móvil.
+            </p>
+            
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://github.com/llCaballeroll" target="_blank" class="btn btn-primary" style="background-color: #333;">
+                    Ver GitHub
+                </a>
+                <a href="mailto:soporte.snakeislands@outlook.com" class="btn btn-primary">
+                    Contactar Desarrollador
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-copy">
+                <p>&copy; 2026 Snake Islands. Luis Angel Caballero Jardón.</p>
+                <p class="location">Documentación Técnica v1.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
