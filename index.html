@@ -26,7 +26,7 @@
                 <a href="#features" class="nav-link">Descubrir</a>
                 <a href="#gameplay" class="nav-link">Galería</a>
                 <a href="presskit.html" class="nav-link">Press Kit</a>
-                <a href="https://play.google.com/store/apps/details?id=com.luiscaballero.snakeislands&hl=es_MX" target="_blank" class="nav-cta">Jugar Ahora</a>
+                <a href="#descargar" class="nav-cta" id="smartDownloadBtn">Descargar</a>
             </div>
         </div>
     </nav>
@@ -37,11 +37,25 @@
                 <h1>Más que un clásico.<br><span class="text-gradient">Un nuevo desafío.</span></h1>
                 <p class="hero-subtitle">Olvídate de lo que conoces. Snake Islands combina precisión extrema, diseño premium y mundos flotantes en una experiencia arcade adictiva.</p>
                 
-                <div class="hero-actions">
-                    <a href="https://play.google.com/store/apps/details?id=com.luiscaballero.snakeislands&hl=es_MX" target="_blank" class="btn btn-primary">
-                        Descargar Gratis en Android
-                    </a>
-                </div>
+<div class="hero-actions" id="descargar">
+    <a 
+        href="https://play.google.com/store/apps/details?id=com.luiscaballero.snakeislands&hl=es_MX" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="btn btn-android"
+    >
+        Descargar en Android
+    </a>
+
+    <a 
+        href="https://apps.apple.com/mx/app/snake-islands/id6759359511" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="btn btn-ios"
+    >
+        Descargar en iOS
+    </a>
+</div>
             </div>
             
             <div class="hero-image fade-in-up delay-1">
@@ -165,5 +179,41 @@
             observer.observe(el);
         });
     </script>
+    <script>
+  const smartDownloadBtn = document.getElementById("smartDownloadBtn");
+
+  const androidUrl = "https://play.google.com/store/apps/details?id=com.luiscaballero.snakeislands&hl=es_MX";
+  const iosUrl = "https://apps.apple.com/mx/app/snake-islands/id6759359511";
+
+  smartDownloadBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    const isAndroid = /android/i.test(userAgent);
+
+    const isIOS =
+      /iPad|iPhone|iPod/.test(userAgent) ||
+      (
+        navigator.platform === "MacIntel" &&
+        navigator.maxTouchPoints > 1
+      );
+
+    if (isAndroid) {
+      window.location.href = androidUrl;
+      return;
+    }
+
+    if (isIOS) {
+      window.location.href = iosUrl;
+      return;
+    }
+
+    document.getElementById("descargar").scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  });
+</script>
 </body>
 </html>
