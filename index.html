@@ -1,219 +1,324 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es-MX" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Islands | Domina el Reto Arcade</title>
-    <meta name="description" content="Snake Islands: El juego de precisión definitivo. Conquista islas flotantes, desbloquea skins y domina el ranking global en esta reinvención premium del clásico Snake.">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Snake Islands · El Snake clásico en islas flotantes</title>
+    <meta name="description" content="Snake Islands: el Snake clásico renovado. Come huevos, esquiva bombas y a la Calaca, conquista 10 islas y desbloquea 77 skins. Gratis en iPhone y Android.">
+    <meta name="theme-color" content="#050d1a">
+    <link rel="canonical" href="https://llcaballeroll.github.io/snake_islands_web/">
+
+    <!-- Banner inteligente de Safari en iPhone -->
+    <meta name="apple-itunes-app" content="app-id=6759359511">
+
+    <!-- Vista previa al compartir (WhatsApp, iMessage, Telegram, X, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Snake Islands">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Snake Islands · ¿Puedes superar mi récord?">
+    <meta property="og:description" content="El Snake clásico en islas flotantes. 10 islas, 77 skins y ranking mundial. Gratis en iPhone y Android.">
+    <meta property="og:url" content="https://llcaballeroll.github.io/snake_islands_web/">
+    <meta property="og:image" content="https://llcaballeroll.github.io/snake_islands_web/assets/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Snake Islands: una serpiente verde abraza un huevo dorado sobre una isla flotante">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/icon_512.png">
-    <link rel="apple-touch-icon" href="assets/img/icon_512.png">
-
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Snake Islands",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "GameApplication",
+      "genre": "Arcade",
+      "inLanguage": ["es", "en", "pt", "fr", "de", "ru", "ja", "ko", "zh", "id"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MXN" },
+      "author": { "@type": "Person", "name": "Luis Angel Caballero Jardón" },
+      "image": "https://llcaballeroll.github.io/snake_islands_web/assets/img/og-image.jpg",
+      "sameAs": [
+        "https://apps.apple.com/mx/app/snake-islands/id6759359511",
+        "https://play.google.com/store/apps/details?id=com.luiscaballero.snakeislands"
+      ]
+    }
+    </script>
+    <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Snake Islands</a>
-            <div class="nav-menu">
-                <a href="#features" class="nav-link">Descubrir</a>
-                <a href="#gameplay" class="nav-link">Galería</a>
-                <a href="presskit.html" class="nav-link">Press Kit</a>
-                <a href="#descargar" class="nav-cta" id="smartDownloadBtn">Descargar</a>
+    <nav class="navbar" aria-label="Principal">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand" aria-label="Snake Islands, inicio">
+                <img src="assets/img/icon-192.png" alt="" width="34" height="34">
+                Snake Islands
+            </a>
+            <div class="nav-links">
+                <a href="#como-se-juega">Cómo se juega</a>
+                <a href="#islas">Islas</a>
+                <a href="#skins">Skins</a>
+                <a href="presskit.html">Press kit</a>
             </div>
+            <a href="#descargar" class="nav-cta" data-smart-download>Descargar gratis</a>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container hero-content">
-            <div class="hero-text fade-in-up">
-                <h1>Más que un clásico.<br><span class="text-gradient">Un nuevo desafío.</span></h1>
-                <p class="hero-subtitle">Olvídate de lo que conoces. Snake Islands combina precisión extrema, diseño premium y mundos flotantes en una experiencia arcade adictiva.</p>
-                
-<div class="hero-actions" id="descargar">
-    <a 
-        href="https://play.google.com/store/apps/details?id=com.luiscaballero.snakeislands&hl=es_MX" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="btn btn-android"
-    >
-        Descargar en Android
-    </a>
+    <main id="contenido">
+        <!-- HERO -->
+        <header class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <span class="eyebrow">Arcade · Gratis en iPhone y Android</span>
+                    <h1>El Snake de siempre,<br><span class="green-text">ahora en islas flotantes.</span></h1>
+                    <p class="lead">Desliza para moverte, come huevos para crecer y esquiva bombas y a la Calaca. Cada récord desbloquea una isla nueva y skins para tu serpiente.</p>
 
-    <a 
-        href="https://apps.apple.com/mx/app/snake-islands/id6759359511" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="btn btn-ios"
-    >
-        Descargar en iOS
-    </a>
-</div>
-            </div>
-            
-            <div class="hero-image fade-in-up delay-1">
-                <div class="phone-mockup">
-                    <img src="assets/img/3_SI.png" alt="Snake Islands Gameplay Mobile" class="mockup-img">
-                </div>
-            </div>
-        </div>
-    </header>
+                    <div class="store-row" id="descargar">
+                        <a class="store-btn" href="https://apps.apple.com/mx/app/snake-islands/id6759359511" target="_blank" rel="noopener" data-store="ios">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 1.43c0 1.14-.5 2.27-1.18 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.2-2.98.81-.94 2.15-1.64 3.25-1.68.03.13.06.28.06.43Zm4.56 15.71c-.03.07-.46 1.58-1.52 3.12-.94 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8C4 18.38 2.97 15.57 2.97 12.92c0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.67.95 3.6.95.86 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.37 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.95 4.45Z"/></svg>
+                            <span><small>Descárgalo en el</small><strong>App Store</strong></span>
+                        </a>
+                        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.luiscaballero.snakeislands&amp;hl=es_MX" target="_blank" rel="noopener" data-store="android">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00c3ff" d="M3.6 1.8 13.8 12 3.6 22.2c-.37-.2-.6-.6-.6-1.1V2.9c0-.5.23-.9.6-1.1Z"/><path fill="#ffc400" d="m17.2 8.6 3.2 1.8c.9.5.9 1.8 0 2.3l-3.2 1.8-3.4-2.5Z"/><path fill="#00d26a" d="M3.6 1.8c.36-.22.82-.22 1.2 0l12.4 6.8-3.4 3.4Z"/><path fill="#ff3a44" d="m13.8 12 3.4 3.4-12.4 6.8c-.38.22-.84.22-1.2 0Z"/></svg>
+                            <span><small>Disponible en</small><strong>Google Play</strong></span>
+                        </a>
+                    </div>
 
-    <section id="gameplay" class="section-dark">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <h2>Domina la Isla.</h2>
-                <p>Sin controles complicados. Solo tus reflejos contra el mapa.</p>
-            </div>
-            
-            <div class="gameplay-grid fade-in-up">
-                <div class="gallery-card">
-                    <img src="assets/img/1_SI.png" alt="Explora niveles vibrantes" loading="lazy">
+                    <ul class="hero-facts">
+                        <li>Sin registro</li>
+                        <li>Ranking en Game Center y Play Games</li>
+                        <li>10 idiomas</li>
+                    </ul>
                 </div>
-                <div class="gallery-card">
-                    <img src="assets/img/2_SI.png" alt="Enfréntate a jefes y retos" loading="lazy">
-                </div>
-                <div class="gallery-card">
-                    <img src="assets/img/4_SI.png" alt="Personaliza tu experiencia" loading="lazy">
-                </div>
-            </div>
 
-            <div class="gameplay-wide fade-in-up">
-                <div class="wide-card">
-                    <img src="assets/img/4_5_SI.png" alt="Gameplay Panorámico Acción" loading="lazy">
-                </div>
-                <div class="wide-card">
-                    <img src="assets/img/6_7_SI.png" alt="Gameplay Panorámico Boss" loading="lazy">
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="features" class="section-light">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <h2>¿Por qué jugar?</h2>
-            </div>
-            
-            <div class="features-grid">
-                <div class="card glass fade-in-up delay-1">
-                    <div class="card-icon">🏝️</div>
-                    <h3>Mundos Vivos</h3>
-                    <p>Cada nivel es una isla flotante con su propia personalidad. Descubre secretos, evita trampas y desbloquea nuevos horizontes.</p>
-                </div>
-                <div class="card glass fade-in-up delay-2">
-                    <div class="card-icon">⚡</div>
-                    <h3>Control Perfecto</h3>
-                    <p>Olvídate del lag. Experimenta una respuesta táctil instantánea y animaciones ultra fluidas diseñadas para la precisión.</p>
-                </div>
-                <div class="card glass fade-in-up delay-3">
-                    <div class="card-icon">🎨</div>
-                    <h3>Tu Estilo Único</h3>
-                    <p>No seas una serpiente más. Desbloquea decenas de skins minimalistas y paletas de colores para jugar con estilo.</p>
-                </div>
-                <div class="card glass fade-in-up delay-4">
-                    <div class="card-icon">🏆</div>
-                    <h3>Compite Globalmente</h3>
-                    <p>Sube en los leaderboards y demuestra quién manda. Modo Hardcore disponible solo para verdaderos maestros.</p>
+                <div class="hero-visual reveal">
+                    <div class="glow" aria-hidden="true"></div>
+                    <img class="float f-egg" src="assets/img/game/items/egg_gold.webp" alt="" width="240" height="240" aria-hidden="true">
+                    <img class="float f-bomb" src="assets/img/game/items/bomb.webp" alt="" width="240" height="240" aria-hidden="true">
+                    <img class="float f-skull" src="assets/img/game/items/skull.webp" alt="" width="240" height="240" aria-hidden="true">
+                    <img class="float f-gem" src="assets/img/game/items/diamond.webp" alt="" width="240" height="240" aria-hidden="true">
+                    <img class="phone" src="assets/img/shots/home.webp" alt="Pantalla de inicio de Snake Islands con la mejor puntuación y la isla del nivel actual" width="600" height="1244" fetchpriority="high">
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <section class="section-video">
-        <div class="container fade-in-up">
-            <div class="video-wrapper">
-                <div class="video-placeholder">
-                    <span>Ver Trailer Oficial</span>
+        <!-- CIFRAS -->
+        <section class="stats" aria-label="El juego en cifras">
+            <div class="container">
+                <div class="stats-grid reveal">
+                    <div class="stat"><b class="green-text">10</b><span>islas por conquistar</span></div>
+                    <div class="stat"><b class="gold-text">77</b><span>skins coleccionables</span></div>
+                    <div class="stat"><b>10</b><span>idiomas</span></div>
+                    <div class="stat"><b>∞</b><span>récords por romper</span></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section-about">
-        <div class="container narrow-container fade-in-up">
-            <h2>Nuestra Misión</h2>
-            <p>Creamos Snake Islands para quienes buscan calidad sobre cantidad. Un juego donde la habilidad importa, el diseño inspira y cada partida cuenta.</p>
-        </div>
-    </section>
+        <!-- CÓMO SE JUEGA -->
+        <section id="como-se-juega">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Cómo se juega</span>
+                    <h2>Fácil de aprender.<br>Difícil de soltar.</h2>
+                    <p>Un dedo, cuatro direcciones y una isla que se vuelve más rápida y más peligrosa con cada punto.</p>
+                </div>
+
+                <div class="rules">
+                    <article class="rule reveal">
+                        <img class="art" src="assets/img/game/items/egg.webp" alt="" width="84" height="84" loading="lazy">
+                        <h3>Come y crece</h3>
+                        <p>Desliza para cambiar de dirección. Cada huevo suma un punto y alarga tu serpiente. No choques contigo misma.</p>
+                        <div class="tags"><span class="tag good">+1 punto</span><span class="tag">Desliza ↑ ↓ ← →</span></div>
+                    </article>
+                    <article class="rule reveal">
+                        <img class="art" src="assets/img/game/items/bomb.webp" alt="" width="84" height="84" loading="lazy">
+                        <h3>Bombas</h3>
+                        <p>Cae una cada 10 segundos. Al tocar el suelo tienes 4 segundos antes de que explote en un área de 3×3.</p>
+                        <div class="tags"><span class="tag bad">Cabeza: fin del juego</span><span class="tag bad">Cuerpo: −50 % de puntos</span></div>
+                    </article>
+                    <article class="rule reveal">
+                        <img class="art" src="assets/img/game/items/skull.webp" alt="" width="84" height="84" loading="lazy">
+                        <h3>La Calaca</h3>
+                        <p>Desde el nivel 4 un fantasma recorre la isla buscando tu error. Mantén la cabeza lejos.</p>
+                        <div class="tags"><span class="tag bad">Cabeza: fin del juego</span><span class="tag bad">Cuerpo: −1 punto/seg</span></div>
+                    </article>
+                    <article class="rule gold-card reveal">
+                        <img class="art" src="assets/img/game/items/egg_gold.webp" alt="" width="84" height="84" loading="lazy">
+                        <h3>Huevo dorado</h3>
+                        <p>Aparece con 15 % de probabilidad. Encoge tu serpiente a 3 segmentos y llena tu energía: mantén presionado para ir en turbo o en cámara lenta.</p>
+                        <div class="tags"><span class="tag gold">Milagro</span><span class="tag gold">Energía al 100 %</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ISLAS -->
+        <section id="islas" class="islands-section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Progresión</span>
+                    <h2>10 islas. Cada una más rápida.</h2>
+                    <p>Tu mejor puntuación desbloquea islas nuevas, y cada isla trae recompensas: huevos, bombas, calacas y serpientes. Puedes volver a jugar cualquier isla que ya hayas abierto.</p>
+                </div>
+
+                <div class="islands reveal" tabindex="0" aria-label="Las 10 islas del juego">
+                    <div class="island"><img src="assets/img/game/islands/isla_1.webp" alt="Isla del nivel 1" width="420" height="420" loading="lazy"><b>Nivel 1</b><span>Desde el inicio</span></div>
+                    <div class="island"><img src="assets/img/game/islands/isla_2.webp" alt="Isla del nivel 2" width="420" height="420" loading="lazy"><b>Nivel 2</b><span>25 puntos</span></div>
+                    <div class="island"><img src="assets/img/game/islands/isla_3.webp" alt="Isla del nivel 3" width="420" height="420" loading="lazy"><b>Nivel 3</b><span>50 puntos</span></div>
+                    <div class="island"><img src="assets/img/game/islands/isla_4.webp" alt="Isla del nivel 4" width="420" height="420" loading="lazy"><b>Nivel 4</b><span>75 puntos</span></div>
+                    <div class="island"><img src="assets/img/game/islands/isla_5.webp" alt="Isla del nivel 5" width="420" height="420" loading="lazy"><b>Nivel 5</b><span>100 puntos</span></div>
+                    <div class="island"><img src="assets/img/game/islands/isla_399.webp" alt="Isla Tierras Pútridas" width="420" height="420" loading="lazy"><b>Tierras Pútridas</b><span>400 puntos</span></div>
+                    <div class="island"><img src="assets/img/game/islands/isla_599.webp" alt="Isla Modo Piñata" width="420" height="420" loading="lazy"><b>Modo Piñata</b><span>600 puntos</span></div>
+                    <div class="island"><img src="assets/img/game/islands/isla_799.webp" alt="Isla Domo de Lava" width="420" height="420" loading="lazy"><b>Domo de Lava</b><span>800 puntos</span></div>
+                    <div class="island"><img src="assets/img/game/islands/isla_999.webp" alt="Isla Leyenda" width="420" height="420" loading="lazy"><b>Leyenda</b><span>1,000 puntos</span></div>
+                    <div class="island final"><img src="assets/img/game/islands/isla_9999.webp" alt="Isla Imposible" width="420" height="420" loading="lazy"><b>IMPOSIBLE</b><span>10,000 puntos</span></div>
+                </div>
+                <p class="scroll-hint">Desliza para ver todas las islas →</p>
+            </div>
+        </section>
+
+        <!-- GALERÍA -->
+        <section id="galeria">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Capturas reales</span>
+                    <h2>Así se ve en tu teléfono.</h2>
+                    <p>Modo oscuro, efecto vidrio y animaciones fluidas a 60 y 120 Hz.</p>
+                </div>
+                <div class="shots reveal" tabindex="0" aria-label="Capturas del juego">
+                    <figure class="shot"><img src="assets/img/shots/game.webp" alt="Partida en curso: la serpiente persigue un huevo mientras cae una bomba" width="600" height="1244" loading="lazy"><figcaption>La partida</figcaption></figure>
+                    <figure class="shot"><img src="assets/img/shots/levels.webp" alt="Mapa de niveles con las islas y sus recompensas" width="600" height="1244" loading="lazy"><figcaption>Mapa de islas</figcaption></figure>
+                    <figure class="shot"><img src="assets/img/shots/home.webp" alt="Pantalla de inicio con la mejor puntuación" width="600" height="1244" loading="lazy"><figcaption>Inicio</figcaption></figure>
+                    <figure class="shot"><img src="assets/img/shots/shop.webp" alt="Tienda de skins con serpientes desbloqueadas" width="600" height="1244" loading="lazy"><figcaption>Tienda de skins</figcaption></figure>
+                    <figure class="shot"><img src="assets/img/shots/fondos.webp" alt="Tienda de fondos para la partida" width="600" height="1244" loading="lazy"><figcaption>Fondos para tu isla</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKINS -->
+        <section id="skins" class="islands-section">
+            <div class="container skins-layout">
+                <div class="reveal">
+                    <span class="eyebrow">Colección</span>
+                    <h2 style="font-size: clamp(2rem, 5vw, 3.1rem); margin: .6rem 0 1rem;">77 skins para<br><span class="gold-text">tu estilo.</span></h2>
+                    <p style="color: var(--text-2);">Cambia la cabeza de tu serpiente, los huevos, las bombas, la Calaca y el fondo. Muchas se ganan jugando; las más raras salen en cajas. Cada caja trae 5 fragmentos y, al juntar los necesarios, la skin es tuya para siempre.</p>
+                    <div class="rarity-list">
+                        <div class="rarity" style="--c:#9ca3af"><b>Común</b><span>49 fragmentos</span></div>
+                        <div class="rarity" style="--c:#60a5fa"><b>Rara</b><span>99 fragmentos</span></div>
+                        <div class="rarity" style="--c:#c084fc"><b>Épica</b><span>149 fragmentos</span></div>
+                        <div class="rarity" style="--c:#fbbf24"><b>Legendaria</b><span>199 fragmentos</span></div>
+                        <div class="rarity" style="--c:#f87171"><b>Campeona</b><span>300 fragmentos</span></div>
+                    </div>
+                    <p class="note">Consigue cajas gratis cada día, por ver un anuncio, con los diamantes que ganas jugando o en paquetes. Cada fragmento tiene la misma probabilidad de ser cualquiera de las skins de caja. <a href="terms.html#cajas" style="color:var(--sky)">Más detalles</a>.</p>
+                </div>
+                <div class="skins-grid reveal" aria-label="Algunas skins de serpiente">
+                    <div class="skin" style="--c:#9ca3af"><img src="assets/img/game/skins/snake_common_01.webp" alt="Skin común" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#9ca3af"><img src="assets/img/game/skins/snake_common_02.webp" alt="Skin común" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#9ca3af"><img src="assets/img/game/skins/snake_common_03.webp" alt="Skin común" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#60a5fa"><img src="assets/img/game/skins/snake_rare_01.webp" alt="Skin rara" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#60a5fa"><img src="assets/img/game/skins/snake_rare_02.webp" alt="Skin rara" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#c084fc"><img src="assets/img/game/skins/snake_epic_01.webp" alt="Skin épica" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#c084fc"><img src="assets/img/game/skins/snake_epic_02.webp" alt="Skin épica" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#fbbf24"><img src="assets/img/game/skins/snake_legendary_01.webp" alt="Skin legendaria" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#f87171"><img src="assets/img/game/skins/snake_champion_01.webp" alt="Skin campeona" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#f87171"><img src="assets/img/game/skins/snake_champion_02.webp" alt="Skin campeona" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#f87171"><img src="assets/img/game/skins/snake_champion_03.webp" alt="Skin campeona" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#4ade80"><img src="assets/img/game/skins/snake_head_nivel_5.webp" alt="Skin del nivel 5" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#4ade80"><img src="assets/img/game/skins/snake_head_score_999.webp" alt="Skin de la isla Leyenda" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#fcd34d"><img src="assets/img/game/skins/snake_head_score_9999.webp" alt="Skin de la isla Imposible" width="200" height="200" loading="lazy"></div>
+                    <div class="skin" style="--c:#5ab8ff"><img src="assets/img/game/items/box.webp" alt="Caja de skins" width="200" height="200" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANKING Y COMPARTIR -->
+        <section id="compite">
+            <div class="container">
+                <div class="split">
+                    <article class="panel reveal">
+                        <span class="eyebrow">Ranking mundial</span>
+                        <h3>Compite contra todo el mundo.</h3>
+                        <p>Tu récord se publica en Game Center (iPhone) y Google Play Games (Android). Gana logros, sube en la tabla y presume tu mejor marca.</p>
+                        <div class="langs" aria-label="Idiomas disponibles">
+                            <span class="tag">Español</span><span class="tag">English</span><span class="tag">Português</span><span class="tag">Français</span><span class="tag">Deutsch</span><span class="tag">Русский</span><span class="tag">日本語</span><span class="tag">한국어</span><span class="tag">中文</span><span class="tag">Bahasa Indonesia</span>
+                        </div>
+                        <div class="goal">
+                            <img src="assets/img/game/islands/isla_9999.webp" alt="La isla IMPOSIBLE" width="420" height="420" loading="lazy">
+                            <p><b class="gold-text">IMPOSIBLE</b>La última isla se abre con 10,000 puntos. ¿Quién de tus amigos llega primero?</p>
+                        </div>
+                    </article>
+                    <article class="panel reveal">
+                        <span class="eyebrow">Reta a tus amigos</span>
+                        <h3>¿Pueden superar tu récord?</h3>
+                        <p>Con un toque se genera una tarjeta con tu puntuación, tu isla y tu skin. Compártela por WhatsApp, iMessage, Telegram o donde quieras, con el enlace para descargar el juego.</p>
+                        <div class="media share"><img src="assets/img/game/share-card.webp" alt="Tarjeta para compartir con la puntuación, el nivel y la skin" width="1080" height="1350" loading="lazy"></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="final-cta">
+            <div class="container">
+                <div class="final-card reveal">
+                    <img class="egg" src="assets/img/game/items/egg_gold.webp" alt="" width="92" height="92" loading="lazy">
+                    <h2>Tu primera isla te espera.</h2>
+                    <p>Gratis, sin registro y listo en segundos. Los anuncios se pueden quitar con una compra única.</p>
+                    <div class="store-row">
+                        <a class="store-btn" href="https://apps.apple.com/mx/app/snake-islands/id6759359511" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 1.43c0 1.14-.5 2.27-1.18 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.2-2.98.81-.94 2.15-1.64 3.25-1.68.03.13.06.28.06.43Zm4.56 15.71c-.03.07-.46 1.58-1.52 3.12-.94 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8C4 18.38 2.97 15.57 2.97 12.92c0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.67.95 3.6.95.86 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.37 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.95 4.45Z"/></svg>
+                            <span><small>Descárgalo en el</small><strong>App Store</strong></span>
+                        </a>
+                        <a class="store-btn dark" href="https://play.google.com/store/apps/details?id=com.luiscaballero.snakeislands&amp;hl=es_MX" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00c3ff" d="M3.6 1.8 13.8 12 3.6 22.2c-.37-.2-.6-.6-.6-1.1V2.9c0-.5.23-.9.6-1.1Z"/><path fill="#ffc400" d="m17.2 8.6 3.2 1.8c.9.5.9 1.8 0 2.3l-3.2 1.8-3.4-2.5Z"/><path fill="#00d26a" d="M3.6 1.8c.36-.22.82-.22 1.2 0l12.4 6.8-3.4 3.4Z"/><path fill="#ff3a44" d="m13.8 12 3.4 3.4-12.4 6.8c-.38.22-.84.22-1.2 0Z"/></svg>
+                            <span><small>Disponible en</small><strong>Google Play</strong></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <div class="container footer-content">
-            <div class="footer-links">
-                <a href="privacy.html">Privacidad</a>
-                <a href="terms.html">Términos</a>
-                <a href="technical.html">Tech Specs</a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="brand"><img src="assets/img/icon-192.png" alt="" width="34" height="34">Snake Islands</a>
+                    <p>Un juego independiente hecho en Metepec, Estado de México, por Luis Angel Caballero Jardón.</p>
+                </div>
+                <div>
+                    <h4>Juego</h4>
+                    <ul>
+                        <li><a href="https://apps.apple.com/mx/app/snake-islands/id6759359511" target="_blank" rel="noopener">App Store</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.luiscaballero.snakeislands&amp;hl=es_MX" target="_blank" rel="noopener">Google Play</a></li>
+                        <li><a href="presskit.html">Press kit</a></li>
+                        <li><a href="technical.html">Ficha técnica</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Ayuda y legal</h4>
+                    <ul>
+                        <li><a href="mailto:soporte.snakeislands@outlook.com">Soporte</a></li>
+                        <li><a href="privacy.html">Política de privacidad</a></li>
+                        <li><a href="terms.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-copy">
-                <p>&copy; 2026 Snake Islands. Creado con pasión por Luis Angel Caballero Jardón.</p>
-                <p class="location">Metepec, Estado de México.</p>
+            <div class="footer-bottom">
+                <span>© 2026 Luis Angel Caballero Jardón. Todos los derechos reservados.</span>
+                <span>App Store es una marca de Apple Inc. Google Play es una marca de Google LLC.</span>
             </div>
         </div>
     </footer>
 
-    <script>
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach((el) => {
-            observer.observe(el);
-        });
-    </script>
-    <script>
-  const smartDownloadBtn = document.getElementById("smartDownloadBtn");
-
-  const androidUrl = "https://play.google.com/store/apps/details?id=com.luiscaballero.snakeislands&hl=es_MX";
-  const iosUrl = "https://apps.apple.com/mx/app/snake-islands/id6759359511";
-
-  smartDownloadBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-    const isAndroid = /android/i.test(userAgent);
-
-    const isIOS =
-      /iPad|iPhone|iPod/.test(userAgent) ||
-      (
-        navigator.platform === "MacIntel" &&
-        navigator.maxTouchPoints > 1
-      );
-
-    if (isAndroid) {
-      window.location.href = androidUrl;
-      return;
-    }
-
-    if (isIOS) {
-      window.location.href = iosUrl;
-      return;
-    }
-
-    document.getElementById("descargar").scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  });
-</script>
+    <script src="js/site.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://llcaballeroll.github.io/snake_islands_web/sitemap.xml
