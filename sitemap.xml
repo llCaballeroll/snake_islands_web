@@ -1,8 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://llcaballeroll.github.io/snake_islands_web/</loc><lastmod>2026-11-01</lastmod><priority>1.0</priority></url>
-  <url><loc>https://llcaballeroll.github.io/snake_islands_web/presskit.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://llcaballeroll.github.io/snake_islands_web/technical.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://llcaballeroll.github.io/snake_islands_web/privacy.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://llcaballeroll.github.io/snake_islands_web/terms.html</loc><lastmod>2026-11-01</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://llcaballeroll.github.io/snake_islands_web/</loc><lastmod>2026-11-21</lastmod><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/"/>
+  </url>
+  <url><loc>https://llcaballeroll.github.io/snake_islands_web/es/</loc><lastmod>2026-11-21</lastmod><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/"/>
+  </url>
+  <url><loc>https://llcaballeroll.github.io/snake_islands_web/presskit.html</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/presskit.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/presskit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/presskit.html"/>
+  </url>
+  <url><loc>https://llcaballeroll.github.io/snake_islands_web/es/presskit.html</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/presskit.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/presskit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/presskit.html"/>
+  </url>
+  <url><loc>https://llcaballeroll.github.io/snake_islands_web/technical.html</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/technical.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/technical.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/technical.html"/>
+  </url>
+  <url><loc>https://llcaballeroll.github.io/snake_islands_web/es/technical.html</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/technical.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/technical.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/technical.html"/>
+  </url>
+  <url><loc>https://llcaballeroll.github.io/snake_islands_web/privacy.html</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/privacy.html"/>
+  </url>
+  <url><loc>https://llcaballeroll.github.io/snake_islands_web/es/privacy.html</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/privacy.html"/>
+  </url>
+  <url><loc>https://llcaballeroll.github.io/snake_islands_web/terms.html</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/terms.html"/>
+  </url>
+  <url><loc>https://llcaballeroll.github.io/snake_islands_web/es/terms.html</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/terms.html"/>
+  </url>
 </urlset>

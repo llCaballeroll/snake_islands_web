@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Cómo está hecho · Snake Islands</title>
+  <meta name="description" content="Cómo está hecho Snake Islands: Flutter y Flame, estructura del proyecto, decisiones técnicas, dependencias y publicación en iOS y Android.">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://llcaballeroll.github.io/snake_islands_web/es/technical.html">
+  <link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/snake_islands_web/technical.html">
+  <link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/snake_islands_web/es/technical.html">
+  <link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/snake_islands_web/technical.html">
+  <meta property="og:title" content="Cómo está hecho · Snake Islands">
+  <meta property="og:image" content="https://llcaballeroll.github.io/snake_islands_web/assets/img/og-image.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="nav">
+    <nav class="wrap nav-inner" aria-label="Principal">
+      <a class="brand" href="index.html"><img src="../assets/img/icon-192.png" alt="" width="28" height="28">Snake Islands</a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="presskit.html">Press kit</a>
+        <a href="technical.html" aria-current="page">Cómo está hecho</a>
+        <a href="privacy.html">Privacidad</a>
+        <a href="terms.html">Términos</a>
+        <a href="../technical.html" hreflang="en" lang="en">English</a>
+      </div>
+      <a class="lang-mobile" href="../technical.html" hreflang="en" lang="en">EN</a>
+      <a class="btn" href="index.html#get" data-smart-download>Descargar</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="tile night page-head" aria-labelledby="tech-title">
+      <div class="wrap">
+        <p class="eyebrow">Ingeniería</p>
+        <h1 id="tech-title" class="display">Cómo está hecho</h1>
+        <p class="lead">Un solo código en Dart para iPhone, iPad y Android: Flutter para la interfaz y Flame para el juego.</p>
+        <div class="badges">
+          <span class="badge">Flutter 3.47</span>
+          <span class="badge">Dart 3.10</span>
+          <span class="badge">Flame 1.34</span>
+          <span class="badge">iOS + Android</span>
+          <span class="badge">v1.1.3</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="base-title">
+      <div class="wrap">
+        <h2 id="base-title">La base</h2>
+        <div class="cards">
+          <article class="card"><h3>Motor de juego</h3><p><strong>Flame</strong> controla el ciclo del juego en una cuadrícula: la serpiente, la comida, las bombas, la Calaca y las explosiones son componentes independientes.</p></article>
+          <article class="card"><h3>Interfaz</h3><p><strong>Flutter</strong> dibuja los menús, la tienda y los ajustes con efecto vidrio, modo oscuro y animaciones que se adaptan a pantallas de 60 y 120 Hz.</p></article>
+          <article class="card"><h3>Monetización</h3><p><strong>Google Mobile Ads</strong> (anuncio al abrir, banner y con recompensa) con consentimiento UMP, y <strong>compras dentro de la app</strong> con StoreKit y Google Play Billing 8.</p></article>
+          <article class="card"><h3>Social</h3><p>Ranking y logros con <strong>Game Center</strong> y <strong>Google Play Games</strong>, y una tarjeta para compartir el récord que se genera en el propio teléfono.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="tree-title">
+      <div class="wrap">
+        <h2 id="tree-title">Estructura del proyecto</h2>
+        <p class="sub">La lógica del juego (Flame) vive separada de la interfaz (Flutter), y los servicios externos están aislados en su propia carpeta.</p>
+        <div class="code-window">
+          <div class="code-bar"><i></i><i></i><i></i><span>snake_game/lib</span></div>
+<pre><span class="c-dir">lib/</span>
+├── main.dart                 <span class="c-cm">// arranque, idiomas, tema y audio global</span>
+├── <span class="c-dir">game/</span>
+│   ├── snake_game.dart       <span class="c-cm">// ciclo del juego, niveles y reglas</span>
+│   ├── <span class="c-dir">components/</span>           <span class="c-cm">// serpiente, comida, bomba, fantasma, explosión</span>
+│   └── <span class="c-dir">managers/</span>             <span class="c-cm">// carga de assets, hitos y skins</span>
+├── <span class="c-dir">screens/</span>                  <span class="c-cm">// inicio, niveles, partida, tiendas, ajustes, onboarding</span>
+├── <span class="c-dir">services/</span>                 <span class="c-cm">// anuncios, compras, música de menús, compartir</span>
+├── <span class="c-dir">widgets/</span>                  <span class="c-cm">// vidrio líquido, transiciones, vibración</span>
+├── <span class="c-dir">theme/</span>                    <span class="c-cm">// colores claro/oscuro</span>
+└── <span class="c-dir">l10n/</span>                     <span class="c-cm">// textos en 16 idiomas</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="dec-title">
+      <div class="wrap">
+        <h2 id="dec-title">Decisiones técnicas</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Rendimiento</h3>
+            <ul>
+              <li><strong>Assets precargados</strong> antes de la partida para que no haya tirones.</li>
+              <li><strong>RepaintBoundary</strong> en las animaciones infinitas de la tienda, para que no repinten toda la pantalla.</li>
+              <li><strong>Frecuencia alta</strong> en Android con <code>flutter_displaymode</code>.</li>
+              <li>Imágenes y sonidos optimizados; la música de los menús está cortada para repetirse sin saltos.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Confiabilidad</h3>
+            <ul>
+              <li><strong>Compras sin duplicados:</strong> cada transacción se entrega una sola vez y siempre se cierra con la tienda.</li>
+              <li><strong>Audio respetuoso:</strong> la música obedece el interruptor de silencio del iPhone y se pausa en segundo plano.</li>
+              <li><strong>Banderas de compilación</strong> (<code>--dart-define</code>) para anuncios de prueba y depuración, que nunca llegan a producción.</li>
+              <li><strong>Consentimiento</strong> de privacidad (UMP) antes de pedir anuncios.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="deps-title">
+      <div class="wrap">
+        <h2 id="deps-title">Dependencias principales</h2>
+        <p class="sub">Paquetes de <code>pubspec.yaml</code> y para qué se usan.</p>
+        <div class="deps">
+          <div class="dep"><code>flame</code><span>Motor 2D y ciclo del juego</span></div>
+          <div class="dep"><code>flame_audio</code><span>Efectos y música</span></div>
+          <div class="dep"><code>google_mobile_ads</code><span>AdMob y consentimiento UMP</span></div>
+          <div class="dep"><code>in_app_purchase</code><span>StoreKit y Play Billing</span></div>
+          <div class="dep"><code>games_services</code><span>Game Center y Play Games</span></div>
+          <div class="dep"><code>share_plus</code><span>Compartir la tarjeta de récord</span></div>
+          <div class="dep"><code>shared_preferences</code><span>Progreso guardado en el teléfono</span></div>
+          <div class="dep"><code>flutter_localization</code><span>16 idiomas</span></div>
+          <div class="dep"><code>flutter_displaymode</code><span>120 Hz en Android</span></div>
+          <div class="dep"><code>animate_do</code><span>Animaciones de interfaz</span></div>
+          <div class="dep"><code>confetti</code><span>Celebraciones de récord</span></div>
+          <div class="dep"><code>url_launcher</code><span>Enlaces legales y de soporte</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pub-title">
+      <div class="wrap">
+        <h2 id="pub-title">Publicación</h2>
+        <div class="cards">
+          <article class="card"><h3>iOS</h3><p>Compilación con Xcode, firma automática y subida a TestFlight con un script. Clasificación 9+.</p></article>
+          <article class="card"><h3>Android</h3><p>App Bundle firmado con llave de subida y Google Play App Signing, con Play Billing Library 8.</p></article>
+          <article class="card"><h3>Una sola versión</h3><p>La misma versión y el mismo número de compilación salen en ambas tiendas, probados antes en iPhone y Android.</p></article>
+          <article class="card"><h3>app-ads.txt</h3><p>Publicado en el dominio del desarrollador para que AdMob verifique el inventario de anuncios.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tile night" aria-labelledby="more-title">
+      <div class="wrap pad-b">
+        <h2 id="more-title" class="headline">¿Quieres saber más?</h2>
+        <p class="lead">El código del juego es privado, pero con gusto platico sobre cómo está hecho.</p>
+        <div class="btn-row">
+          <a class="btn" href="mailto:soporte.snakeislands@outlook.com?subject=Snake%20Islands%20-%20T%C3%A9cnico">Escribir al desarrollador</a>
+          <a class="btn ghost" href="https://github.com/llCaballeroll" target="_blank" rel="noopener">Perfil de GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="privacy.html">Política de privacidad</a>
+        <a href="terms.html">Términos y condiciones</a>
+        <a href="presskit.html">Press kit</a>
+        <a href="mailto:soporte.snakeislands@outlook.com">Soporte</a>
+        <a href="../technical.html" hreflang="en" lang="en">English</a>
+      </div>
+      <p>© 2026 Luis Angel Caballero Jardón · Snake Islands</p>
+    </div>
+  </footer>
+  <script src="../js/site.js" defer></script>
+</body>
+</html>
